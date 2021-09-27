@@ -1,0 +1,35 @@
+{
+  "name": "userpost",
+  "version": "1.0.0",
+  "description": "A Graph QL API to persist and query Users and their Posts",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm run test && babel ./src -d ./build/",
+    "start": "npm run build && node build/server.js",
+    "test": "NODE_ENV=test mocha --require @babel/register --require ./test/prescript.js --timeout 10000 ./test/integration/*.spec.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "apollo-server": "^3.3.0",
+    "chai": "^4.3.4",
+    "convict": "^5.2.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.3",
+    "mongoose": "^5.12.11",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/register": "^7.13.16",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.4.0"
+  }
+}
